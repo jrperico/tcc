@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PedalaApp2</string>
+    <string-array name="spUsuCadTipo">
+        <item>Selecionar</item>
+        <item>Administrador</item>
+        <item>Cozinheiro</item>
+        <item>Atendente</item>
+    </string-array>
+    <string-array name="spProdCadTipo">
+        <item>Selecionar</item>
+        <item>Lanche</item>
+        <item>Bebida</item>
+        <item>Adicional</item>
+        <item>Outros</item>
+    </string-array>
+</resources>

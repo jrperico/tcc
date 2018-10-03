@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btUsu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuários" />
+
+    <Button
+        android:id="@+id/btProd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Produtos" />
+
+    <Button
+        android:id="@+id/btIngred"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrediente" />
+</LinearLayout>
