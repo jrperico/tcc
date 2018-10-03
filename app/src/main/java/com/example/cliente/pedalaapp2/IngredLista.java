@@ -1,5 +1,6 @@
 package com.example.cliente.pedalaapp2;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,6 +58,11 @@ public class IngredLista extends AppCompatActivity {
                     public void onClick(View v) {
                         EditText nomeIngred = (EditText) view.findViewById(R.id.edtAlertIngredNome);
                         ingredNome =  nomeIngred.getText().toString();
+                        ingrediente.setNome(ingredNome);
+                        if (ingrediente.salvar()) {
+                            Toast.makeText(IngredLista.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                            recreate();
+                        }
                         alerta.hide();
                     }
                 });
@@ -66,8 +72,6 @@ public class IngredLista extends AppCompatActivity {
                 builder.setView(view);
                 alerta = builder.create();
                 alerta.show();
-                ingrediente.setNome(ingredNome);
-                ingrediente.salvar();
 
             }
         });
@@ -75,9 +79,11 @@ public class IngredLista extends AppCompatActivity {
         lvIngredList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                ingrediente.carregaIngredientePeloId(position);
-                if(ingrediente.excluir())
+                ingrediente.carregaIngredientePeloId(ingredientes.get(position).getId());
+                if(ingrediente.excluir()) {
                     Toast.makeText(IngredLista.this, "Ingrediente excluido com sucesso", Toast.LENGTH_SHORT).show();
+                    recreate();
+                }
                 return false;
             }
         });
